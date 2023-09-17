@@ -1,0 +1,9 @@
+server.port: 8084
+
+api:
+  hongkongairport:
+    domain: 'www.hongkongairport.com'
+    endpoints: 
+      flights: '/flightinfo-rest/rest/flights/past'
+        
+
