@@ -10,7 +10,9 @@ import lombok.Data;
 @Data
 public class Response {
   private LocalDate date; 
-  private List<FlightHourStatus> list;
+  
+  @JsonProperty("list")
+   private List<FlightHourStatus> list;
   
  
 
