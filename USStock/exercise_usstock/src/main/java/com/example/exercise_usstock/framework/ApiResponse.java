@@ -1,6 +1,6 @@
 package com.example.exercise_usstock.framework;
 
-import com.example.exercise_usstock.enums.Code;
+import com.example.exercise_usstock.framework.enums.Code;
 
 public class ApiResponse<T> {
   // attribute name by default same as JSON field name after serialziation
@@ -45,6 +45,11 @@ public class ApiResponse<T> {
       this.data = data;
       return this;
     }
+
+    public ApiResponseBuilder<T> errorMessageIfPresent(String message){
+        this.message += ": " + message;
+        return this;
+    }
     public ApiResponseBuilder<T> ok(){
       this.code = Code.OK.getCode();
       this.message = Code.OK.getDesc();
@@ -53,7 +58,7 @@ public class ApiResponse<T> {
 
     public ApiResponse<T> build() {
       if (this.code == 0 || this.message == null){
-        throw new RuntimeException(); // why throw ?
+        throw new RuntimeException();
       }
       return new ApiResponse<>(this);
     }

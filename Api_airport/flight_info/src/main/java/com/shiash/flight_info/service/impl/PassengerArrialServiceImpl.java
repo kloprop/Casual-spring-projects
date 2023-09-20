@@ -42,7 +42,7 @@ public class PassengerArrialServiceImpl implements PassengerArrialService{
                   .scheme("https")
                   .host(airportDomain)
                   .path(listEndpoint)
-                  .queryParam("date", "date")
+                  .queryParam("date", date)
                   .queryParam("lang", "en")
                   .queryParam("cargo", "false")
                   .queryParam("arrival", "true")

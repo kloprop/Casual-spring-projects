@@ -10,6 +10,6 @@ import com.shiash.flight_info.model.Response;
 
 public interface PassengerArrialOperation {
 
-    @GetMapping(value = "/flightinfos/{date}")
-    List<Response> getFlightInfos (@PathVariable String date);
+    @GetMapping(value = "/flightinfos/{date}/{fliNum}")
+    List<Response> getFlightInfos (@PathVariable String date, @PathVariable String fliNum);
 }

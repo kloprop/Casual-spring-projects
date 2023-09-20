@@ -19,7 +19,7 @@ public class PassengerArrialController implements PassengerArrialOperation {
   PassengerArrialService passengerArrialService;
 
   @Override
-  public List<Response> getFlightInfos (String date){
+  public List<Response> getFlightInfos (String date, String fliNum){
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-M-dd");
     //convert String to LocalDate
     LocalDate localDate = LocalDate.now();
@@ -27,6 +27,8 @@ public class PassengerArrialController implements PassengerArrialOperation {
     catch(Exception e){
       return null;
     }
+    List<Response> responses = passengerArrialService.getFlightInfos(localDate);
+    
     return passengerArrialService.getFlightInfos(localDate);
   }
 }

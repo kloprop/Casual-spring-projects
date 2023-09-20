@@ -1,6 +1,6 @@
 package com.example.exercise_usstock.exception;
 
-import com.example.exercise_usstock.enums.Code;
+import com.example.exercise_usstock.framework.enums.Code;
 
 public class BusinessException extends Exception {
 

@@ -1,4 +1,4 @@
-package com.example.exercise_usstock.mapper;
+package com.example.exercise_usstock.model.mapper;
 
 import com.example.exercise_usstock.model.Profile;
 import com.example.exercise_usstock.model.ProfileDTO;

@@ -8,3 +8,18 @@ api:
         quote: '/api/v1/quote'
         profile: '/api/v1/stock/profile2'
     apiToken : 'ck4fkn9r01qus81pv42gck4fkn9r01qus81pv430'
+
+spring.datasource:
+  url: 'jdbc:postgresql://localhost:5432/postgres'
+  username: 'postgres'
+  password: 'admin1234'
+spring.jpa:
+  show-sql: true
+  ## Hibernate Properties
+  properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  # Hibernate ddl auto (create, create-drop, validate, update)
+  hibernate.ddl-auto: validate # update
+
+spring.sql.init:
+  # schema-locations: classpath:ddl/DDL_DROPS.sql, classpath:ddl/DDL_TUSERS.sql, classpath:ddl/DDL_TPOSTS.sql
+  mode: always # always

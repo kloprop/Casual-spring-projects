@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.exercise_usstock.controller.StockOperation;
 import com.example.exercise_usstock.exception.FinnException;
 import com.example.exercise_usstock.framework.ApiResponse;
-import com.example.exercise_usstock.mapper.ProfileMapper;
-import com.example.exercise_usstock.mapper.StockMapper;
 import com.example.exercise_usstock.model.Profile;
 import com.example.exercise_usstock.model.ProfileDTO;
 import com.example.exercise_usstock.model.Quote;
 import com.example.exercise_usstock.model.Stock;
+import com.example.exercise_usstock.model.mapper.ProfileMapper;
+import com.example.exercise_usstock.model.mapper.StockMapper;
 import com.example.exercise_usstock.service.ProfileService;
 import com.example.exercise_usstock.service.QuoteService;
 
@@ -27,12 +27,12 @@ public class StockController implements StockOperation {
 
 
   @Override
-  public ResponseEntity<ApiResponse<Stock>> findStock(String symbol) throws FinnException{
+  public ApiResponse<Stock> findStock(String symbol) throws FinnException{
     Quote quote = quoteService.findQuote(symbol);
     Profile profile = profileService.findProfile(symbol);
 
     if (profile.getName() == null){
-      throw new RuntimeException("Wrong name");
+      throw new IllegalArgumentException("Wrong Stock name is inputed!");
     }
     ProfileDTO profileDTO = ProfileMapper.map(profile);
     Stock stock = StockMapper.map(quote,profileDTO);
@@ -40,7 +40,7 @@ public class StockController implements StockOperation {
                                   .ok()//
                                   .data(stock)
                                   .build(); 
-    return ResponseEntity.ok().body(response);
+    return response;
   }
 
 

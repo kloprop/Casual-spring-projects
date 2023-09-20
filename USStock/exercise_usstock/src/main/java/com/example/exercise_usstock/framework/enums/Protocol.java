@@ -1,4 +1,4 @@
-package com.example.exercise_usstock.enums;
+package com.example.exercise_usstock.framework.enums;
 
 public enum Protocol {
   HTTPS,//

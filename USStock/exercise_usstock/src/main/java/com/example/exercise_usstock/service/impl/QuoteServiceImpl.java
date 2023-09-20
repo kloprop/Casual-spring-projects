@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-import com.example.exercise_usstock.enums.Code;
-import com.example.exercise_usstock.enums.Protocol;
 import com.example.exercise_usstock.exception.FinnException;
+import com.example.exercise_usstock.framework.enums.Code;
+import com.example.exercise_usstock.framework.enums.Protocol;
 import com.example.exercise_usstock.model.Quote;
 import com.example.exercise_usstock.service.QuoteService;
 
