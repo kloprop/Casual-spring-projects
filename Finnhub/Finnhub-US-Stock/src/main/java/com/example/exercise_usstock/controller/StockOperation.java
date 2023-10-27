@@ -15,4 +15,5 @@ public interface StockOperation {
    @GetMapping(value = "/stock/{symbol}")
    @ResponseStatus(value = HttpStatus.OK)
     ApiResponse<Stock> findStock(@PathVariable String symbol) throws FinnException;
+    
 }
